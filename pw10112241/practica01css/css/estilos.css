@@ -5,7 +5,33 @@ body{
     max-width: 1024px;
 }
 header{
-    background-color: #d1e3ee;
+    background-color: #D1E3EE;
+}
+header nav{
+    background: #026DC6;
+    width: 99%;
+    border-radius: 5px;
+    margin: 0px auto;
+    padding: 2px 0px;
+}
+header nav form{
+    float: right;
+    margin-top: -35px;
+    margin-right: 10px;
+}
+header nav form input{
+    border-radius: 5px;
+}
+header nav form input[type="submit"]{
+    background: green;
+    border: 1px solid green;
+    color: white;
+}
+header nav ul li{
+    /*border: 1px solid red;*/
+    color: white;
+    display: inline-block;
+    margin-right: 20px;
 }
 #logo{  /*id="logo" */
     margin: -150px 0px 0px 0px;
