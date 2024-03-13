@@ -13,9 +13,22 @@ body{
     margin: 0px auto; /*centrado*/
     max-width: 1024px;
 }
+footer article{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    vertical-align: top;
+    width: 31.1%;
+}
+footer img{
+    width: 300px;
+}
+header ul{
+    margin-left: -25px;
+}
 header ul li{
     display: inline-block;
-    margin-left: -10px;
+    margin-left: -4px;
     padding: 8px 14px;
     text-align: center;
     width: 17.0%;
@@ -34,6 +47,10 @@ header ul li:nth-child(4){
 }
 header ul li:nth-child(5){
     background-color: var(--color-gris);
+}
+hr{
+    border-style: dashed;
+    color: var(--color-linea);
 }
 section article{
     display: inline-block;
@@ -68,6 +85,9 @@ section img{
 }
 .letragris{
     color: var(--color-linea);
+}
+.readmore{
+    margin-left: 220px;
 }
 .tammenulateral{
     font-size: 1.1em;
