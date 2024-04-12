@@ -1,0 +1,84 @@
+body{
+        font-size: 16px;
+        margin: 0px auto;
+        max-width: 1024px;
+        
+}
+header{
+    margin-bottom: 100px;
+}
+header nav{
+    display: inline-block;
+    margin-left: 110px;
+    margin-right: 200px;
+}
+header nav ul li{
+    display: inline-block;
+    color: grey;
+    margin-left: 30px;
+}
+header img{
+    position: relative;
+    top: 16px;
+}
+#Primerasecc{
+    width: 60%;
+    color: grey;
+}
+#titulo1{
+    font-size: 3.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#work{
+    position: relative;
+    top: -335px;
+    right: -700px;
+}
+.negritas{
+    font-weight: bold;
+    color: black;
+}
+#Changuelog{
+    background-color: white;
+    border-radius: 5px;
+    padding: 9px 15px;
+    color: #ff0044;
+    border-color: #ff0044;
+}
+#Contact{
+    background-color: #ff0044;
+    border-radius: 5px;
+    padding: 9px 20px;
+    color: white;
+    border-color: #ff0044;
+    margin-left: 10px;
+}
+#barra{
+    border-radius: 5px;
+    padding: 12px 200px;
+    border-color: white;
+}
+#boton{
+    background-color: #ff0044;
+    border-radius: 5px;
+    padding: 9px 20px;
+    color: white;
+    border-color: #ff0044;
+    position: relative;
+    left: 450px;
+    top: -39px;
+}
+#segundasecc{
+    margin-top: -250px;
+}
+#titulo2{
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#tercerasecc article{
+    margin-left: 4px;
+
+    width: 24%;
+    display: inline-block;
+
+}
