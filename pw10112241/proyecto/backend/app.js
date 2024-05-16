@@ -59,7 +59,7 @@ app.delete('/api/clientes/:id',(req,res) =>{
     })
 });
 //Insertar un nuevo cliente
-app.post('/api/clientes/:id',(req,res) =>{
+app.post('/api/clientes/',(req,res) =>{
     let data = {
         id:req.body.id,
         nombre:req.body.nombre,
