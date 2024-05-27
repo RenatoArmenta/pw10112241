@@ -2,9 +2,9 @@
     <div class="container mt-5">
         <div class="card">
             <div class="card-header">
-                <h4>Agregar cliente</h4>
+                <h4>Editar cliente</h4>
                 <div v-if="mensaje ==1" class="alert alert-success" role="alert">
-                    Datos guardados con exito
+                    Datos actualizados con exito
                 </div>
             </div>
             <div class="card-body">
@@ -82,13 +82,24 @@ export default {
         }
         
     },
+    mounted(){
+        this.getCliente(this.$route.params.id);
+    },
     methods:{
+        getCliente(clienteID){
+            axios.get('http://localhost:3000/api/clientes/'+clienteID).then(res=>{
+                this.model.cliente = res.data[0];
+                //this.model.cliente.id = res.data[0].id;
+                //this.model.cliente.nombre = res.data[0].nombre;
+
+            })
+        },
         onTodoBien(){
             //alert('Todo valido')
             this.guardarCliente();
         },
         guardarCliente(){
-            axios.post('http://localhost:3000/api/clientes', this.model.cliente)
+            axios.put('http://localhost:3000/api/clientes/'+this.$route.params.id, this.model.cliente)
             .then(res => {
                 if(res.data.affectedRows == 1){ //si insertamos 1 registro 
                     this.model.cliente = { //limpiamos los cuadros de texto

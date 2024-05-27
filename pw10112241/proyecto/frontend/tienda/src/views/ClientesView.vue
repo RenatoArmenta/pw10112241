@@ -26,7 +26,9 @@
                             <td>{{ cliente.telefono }}</td>
                             <td>{{ cliente.rfc }}</td>
                             <td>
-                                <button class="btn">Editar</button> 
+                                <RouterLink :to="{path: '/clientes/'+cliente.id+'/edit'}" class="btn btn-success">
+                                    Editar
+                                </RouterLink>
                                 &nbsp;
                                 <button class="btn btn-danger" @click="deleteCliente(cliente.id)">Borrar</button> 
                                 
@@ -45,29 +47,31 @@
 </template>
 <script>
 import axios from 'axios';
+import { RouterLink } from 'vue-router';
     export default{
-        name: "ClientesView",
-        data(){
-            return{
-                clientes: [],
-            }
+    name: "ClientesView",
+    data() {
+        return {
+            clientes: [],
+        };
+    },
+    mounted() {
+        this.getClientes();
+    },
+    methods: {
+        getClientes() {
+            axios.get('http://localhost:3000/api/clientes').then(res => {
+                this.clientes = res.data;
+            });
         },
-        mounted(){//cuando se carga la pagina 
-            this.getClientes()
-        },
-        methods: {
-            getClientes(){
-                axios.get('http://localhost:3000/api/clientes').then(res=>{
-                    this.clientes = res.data;
-                });
-            },
-            deleteCliente(iddelclienteaborrar){
-                axios.delete('http://localhost:3000/api/clientes/'+iddelclienteaborrar).then(res=>{
-                    if(res.data.affectedRows > 0){
-                        this.getClientes(); //se recarguen los datos.
-                    }
-                })
-            }
+        deleteCliente(iddelclienteaborrar) {
+            axios.delete('http://localhost:3000/api/clientes/' + iddelclienteaborrar).then(res => {
+                if (res.data.affectedRows > 0) {
+                    this.getClientes(); //se recarguen los datos.
+                }
+            });
         }
-    }
+    },
+    components: { RouterLink }
+}
 </script>
